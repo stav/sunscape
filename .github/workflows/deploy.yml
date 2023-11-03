@@ -16,16 +16,21 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v4
 
-      - name: Node Build
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: latest
-      - run: npm install
-      - run: npm run clean
-      - run: npm run build
 
-      # COWBOY
-      - name: Deploy
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
+
+      - name: Build
+        run: pnpm run clean && pnpm run build
+
+      - name: Deploy to Cowboy
         uses: "appleboy/scp-action@master"
         with:
           host: ${{ secrets.COWBOY_HOST }}
