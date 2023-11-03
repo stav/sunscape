@@ -10954,6 +10954,9 @@ header.masthead h1, header.masthead .h1 {
   }
 }
 
+#portfolio .img-fluid {
+  width: 100%;
+}
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
   max-width: 1920px;
 }
