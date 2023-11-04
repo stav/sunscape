@@ -1,6 +1,6 @@
 //
 // Scripts
-// 
+//
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    // Shrink the navbar 
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
@@ -50,5 +50,26 @@ window.addEventListener('DOMContentLoaded', event => {
     new SimpleLightbox({
         elements: '#portfolio a.portfolio-box'
     });
+
+    // Form
+    onsubmit = async (event) => {
+        event.preventDefault()
+        const btn = document.getElementById('submitButton')
+        btn.disabled = true
+        btn.textContent = "Sending..."
+        btn.classList.remove('btn-primary')
+        // CORS not supported by Formspree so the browser won't let us see the response
+        await fetch(
+            'https://formspree.io/f/xeqbdaab',
+            {
+              method: 'POST',
+              cache: 'no-cache',
+              redirect: 'manual',
+              body: new FormData(event.target),
+            }
+        )
+        btn.textContent = "Sent, thank you. We'll be in touch."
+        btn.classList.add('btn-secondary')
+    };
 
 });
