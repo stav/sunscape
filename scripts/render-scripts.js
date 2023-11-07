@@ -1,10 +1,10 @@
-'use strict';
-const fs = require('fs');
-const packageJSON = require('../package.json');
-const upath = require('upath');
-const sh = require('shelljs');
+import fs from 'fs'
+import sh from 'shelljs'
+import upath from 'upath'
+import packageJSON from '../package.json' assert {type: 'json'}
+import { __filename } from './_shims.js'
 
-module.exports = function renderScripts() {
+export default function renderScripts() {
 
     const sourcePath = upath.resolve(upath.dirname(__filename), '../src/js/*');
     const destPath = upath.resolve(upath.dirname(__filename), '../dist/assets/');
@@ -23,4 +23,4 @@ module.exports = function renderScripts() {
     const scriptsJS = fs.readFileSync(sourcePathScriptsJS);
 
     fs.writeFileSync(destPathScriptsJS, copyright + scriptsJS);
-};
+}

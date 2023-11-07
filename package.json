@@ -2,6 +2,7 @@
     "title": "Creative",
     "name": "startbootstrap-creative",
     "version": "7.0.7",
+    "type": "module",
     "packageManager": "pnpm@8",
     "scripts": {
         "build": "pnpm run clean && pnpm run build:pug && pnpm run build:assets && pnpm run build:scss && pnpm run build:scripts",

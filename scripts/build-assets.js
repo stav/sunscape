@@ -1,5 +1,3 @@
-'use strict';
+import renderAssets from './render-assets.js'
 
-const renderAssets = require('./render-assets');
-
-renderAssets();
+renderAssets()
