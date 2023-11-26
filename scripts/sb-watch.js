@@ -1,10 +1,10 @@
 import _ from 'lodash'
-import chokidar from 'chokidar'
-import renderAssets from './render-assets'
-import renderPug from './render-pug'
-import renderScripts from './render-scripts'
-import renderSCSS from './render-scss'
 import upath from 'upath'
+import chokidar from 'chokidar'
+import renderPug from './render-pug.js'
+import renderSCSS from './render-scss.js'
+import renderAssets from './render-assets.js'
+import renderScripts from './render-scripts.js'
 
 const watcher = chokidar.watch('src', {
     persistent: true,
