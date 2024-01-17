@@ -1,7 +1,7 @@
 {
-    "title": "Creative",
-    "name": "startbootstrap-creative",
-    "version": "7.0.7",
+    "title": "Sunscape Outdoors",
+    "name": "sunscape-outdoors",
+    "version": "1.0.0",
     "type": "module",
     "packageManager": "pnpm@8",
     "scripts": {
@@ -14,7 +14,7 @@
         "start": "pnpm run build && node scripts/start.js",
         "start:debug": "pnpm run build && node scripts/start-debug.js"
     },
-    "description": "Creative is a stylish one page HTML theme built with Bootstrap.",
+    "description": "Sunscape is an installer of custom pergolas in Northeast Ohio",
     "keywords": [
         "css",
         "sass",
